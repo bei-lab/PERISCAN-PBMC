@@ -1,6 +1,5 @@
-# PERISCAN: Peripheral Immune Dynamics for Cancer Detection
+# PERISCAN: Peripheral immune dynamics at single-cell resolution enable blood-based detection and classification of cancer
 
-A transformer-based deep learning framework for cancer detection using single-cell immune dynamics in peripheral blood.
 
 ## Overview
 TODO: Add project overview
