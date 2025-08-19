@@ -1,7 +1,3 @@
-"""
-__init__.py
-"""
-
 from .periscan import PERISCAN
 from .encoders import GeneEncoder, CellEncoder, FeatureFusion
 from .classifier import Classifier
