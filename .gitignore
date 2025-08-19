@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Data files
+*.h5
+*.h5ad
+*.csv
+*.xlsx
+data/raw/
+data/processed/
+!data/external/sample_data.csv
+
+# Models and results
+results/models/*.pkl
+results/models/*.pth
+*.model
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
