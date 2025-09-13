@@ -188,12 +188,7 @@ from config import PERISCANConfig
 - Refer to the detailed README in the repository
 - Contact the development team
 
-## Citation
 
-This work is currently under peer review. Once published, please cite:
-
-```
-[to be added]
 ```
 
 For now, if you use this code in your research, please reference this GitHub repository and consider citing related work on single-cell immune profiling and transformer architectures for biological data.
