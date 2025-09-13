@@ -80,7 +80,7 @@ python main.py --data_path your_pbmc_data.h5ad --output_dir ./results --gpu --ba
 **Training with custom parameters**:
 ```bash
 python main.py \
-    --data_path your_pbmc_data.h5ad \
+    --data_path pbmc_anndata.h5ad \
     --output_dir ./results \
     --max_epochs 200 \
     --learning_rate 1e-4 \
