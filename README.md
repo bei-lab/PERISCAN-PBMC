@@ -124,7 +124,7 @@ python main.py --data_path data.h5ad --output_dir ./results --train_only
 
 **Evaluation only**:
 ```bash
-python main.py --data_path data.h5ad --eval_only ./results/checkpoints/best_model.pt
+python main.py --data_path data.h5ad --eval_only ./results/checkpoints/model.pt
 ```
 
 ### Output Structure
