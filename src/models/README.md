@@ -1,3 +1,0 @@
-# Readme
-
-TODO: Add documentation
