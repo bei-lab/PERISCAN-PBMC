@@ -7,7 +7,7 @@ PERISCAN is an attention-based deep learning framework that leverages peripheral
 ### Key Features
 
 - **High Sensitivity Cancer Detection**: Achieves >99% sensitivity for distinguishing cancer patients from healthy controls
-- **Multi-Cancer Classification**: Performs tissue-of-origin prediction across 10 different cancer types with 85%+ accuracy  
+- **Multi-Cancer Classification**: Performs tissue-of-origin prediction across 10 different cancer types with 75%+ accuracy  
 - **Early Stage Detection**: Maintains high performance even for Stage I cancers where traditional biomarkers often fail
 - **Mechanistic Insights**: Provides interpretable attention weights revealing immune reprogramming patterns
 - **Clinical Applicability**: Requires only a standard blood draw, making it suitable for routine screening
