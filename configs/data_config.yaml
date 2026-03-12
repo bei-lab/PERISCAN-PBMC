@@ -1,2 +1,52 @@
-# data_config.yaml configuration
-# TODO: Add configuration parameters
+# PERISCAN-I Data Configuration
+# All values extracted from model/train.py, model/periscan_inference.py,
+# and model/data/preprocessing.py
+
+# --------------------------------------------------------------------------
+# Data source
+# --------------------------------------------------------------------------
+discovery_cohort_path: ./data/discovery_cohort.h5ad    # GSA-Human accession: HRA014933
+gene_lists_path: ./data/periscan_1_genes.pkl           # Pre-selected feature gene sets (Fold 1)
+
+# --------------------------------------------------------------------------
+# Expected AnnData obs columns
+# --------------------------------------------------------------------------
+# Training:   pbmc_sample, cancertype, cell_type_merged
+# Inference:  sample_id, annotation
+
+# --------------------------------------------------------------------------
+# Maximum cells per cell type (median-based, rounded to nearest 100)
+# Derived from discovery cohort statistics
+# --------------------------------------------------------------------------
+max_cells:
+  CD14high_Monocyte: 200
+  CD4_Naive_CCR7: 600
+  CD56lowCD16high_NK: 500
+  CD8_Temra_FGFBP2: 300
+  NaiveB-TCL1A: 100
+
+# --------------------------------------------------------------------------
+# Sample quality filtering
+# --------------------------------------------------------------------------
+min_cells_per_type: 10   # Samples with fewer cells in any cell type are removed
+
+# --------------------------------------------------------------------------
+# Gene selection parameters (model/data/preprocessing.py)
+# --------------------------------------------------------------------------
+gene_selection:
+  min_genes_per_cell_type: 50
+  max_genes_per_cell_type: 200
+  min_expression_rate: 0.2     # Gene must be expressed in >= 20% of cells
+  random_state: 42
+
+# --------------------------------------------------------------------------
+# Train/validation split (used in preprocessing.py, separate from CV folds)
+# --------------------------------------------------------------------------
+train_split: 0.8
+
+# --------------------------------------------------------------------------
+# Inference settings
+# --------------------------------------------------------------------------
+inference:
+  batch_size: 8
+  results_dir: /results

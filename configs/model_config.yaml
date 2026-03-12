@@ -1,2 +1,50 @@
-# model_config.yaml configuration
-# TODO: Add configuration parameters
+# PERISCAN-I Model Architecture Configuration
+# All values extracted from model/train.py and model/periscan_inference.py
+
+# --------------------------------------------------------------------------
+# Model hyperparameters
+# --------------------------------------------------------------------------
+embed_dim: 128          # Dimension of cell-type embeddings (gene encoder output)
+hidden_dim: 128         # Hidden dimension of the classification head
+num_classes: 3          # Number of output classes: AD, CANCER, HC
+dropout: 0.4            # Dropout rate for regularisation
+
+# --------------------------------------------------------------------------
+# Class index mapping
+# --------------------------------------------------------------------------
+class_labels:
+  0: AD
+  1: CANCER
+  2: HC
+
+# --------------------------------------------------------------------------
+# Cell types used by the model (order matters)
+# --------------------------------------------------------------------------
+cell_types:
+  - CD14high_Monocyte
+  - CD4_Naive_CCR7
+  - CD56lowCD16high_NK
+  - CD8_Temra_FGFBP2
+  - NaiveB-TCL1A
+
+# --------------------------------------------------------------------------
+# Cancer types mapped to the CANCER class
+# --------------------------------------------------------------------------
+cancer_types:
+  - CESC
+  - COAD
+  - HNSC
+  - LIHC
+  - LUCA
+  - NPC
+  - STAD
+  - PAAD
+  - ESCA
+  - BLCA
+
+# --------------------------------------------------------------------------
+# Attention pooling architecture details
+# --------------------------------------------------------------------------
+# Gene encoder:   Linear(gene_dim, embed_dim) -> LayerNorm -> ReLU -> Dropout
+# Attention score: Linear(embed_dim, embed_dim//2) -> Tanh -> Linear(embed_dim//2, 1)
+# Classifier:     Linear(5*embed_dim, hidden_dim) -> LayerNorm -> ReLU -> Dropout -> Linear(hidden_dim, num_classes)

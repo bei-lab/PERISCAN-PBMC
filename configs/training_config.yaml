@@ -1,2 +1,60 @@
-# training_config.yaml configuration
-# TODO: Add configuration parameters
+# PERISCAN-I Training Configuration
+# All values extracted from model/train.py :: run_training()
+
+# --------------------------------------------------------------------------
+# Reproducibility
+# --------------------------------------------------------------------------
+seed: 42
+deterministic: true     # torch.backends.cudnn.deterministic
+benchmark: false        # torch.backends.cudnn.benchmark
+
+# --------------------------------------------------------------------------
+# Cross-validation
+# --------------------------------------------------------------------------
+n_folds: 5
+cv_random_state: 42
+
+# --------------------------------------------------------------------------
+# DataLoader
+# --------------------------------------------------------------------------
+batch_size: 32
+num_workers: 8
+
+# --------------------------------------------------------------------------
+# Optimiser (AdamW)
+# --------------------------------------------------------------------------
+optimizer: AdamW
+learning_rate: 5.0e-5
+weight_decay: 0.01
+
+# --------------------------------------------------------------------------
+# Loss function
+# --------------------------------------------------------------------------
+loss: CrossEntropyLoss
+class_weight_power: 0.3   # class_weight = (1/count)^power, then normalised
+
+# --------------------------------------------------------------------------
+# Training schedule
+# --------------------------------------------------------------------------
+num_epochs: 150
+gradient_clip_max_norm: 1.0
+
+# --------------------------------------------------------------------------
+# Learning rate scheduler (warmup + cosine annealing)
+# --------------------------------------------------------------------------
+use_scheduler: true
+warmup_epochs: 20
+# After warmup: lr *= 0.5 * (1 + cos(pi * (epoch - warmup) / (total - warmup)))
+
+# --------------------------------------------------------------------------
+# Early stopping
+# --------------------------------------------------------------------------
+early_stopping_patience: 100
+early_stopping_min_delta: 0.001
+
+# --------------------------------------------------------------------------
+# Checkpointing
+# --------------------------------------------------------------------------
+save_dir: ./results
+save_prefix: periscan_attn
+checkpoint_every_n_epochs: 5   # periodic checkpoint interval
