@@ -55,13 +55,11 @@ Your input data should be an AnnData (`.h5ad`) file with the following structure
 
 ## Data Availability
 
-Raw single-cell RNA sequencing data are deposited in the Genome Sequence Archive for Human (GSA-Human) under accession number HRA014933. Key raw count matrices are deposited in the Research Data Deposit (RDD, http://www.researchdata.org.cn).
 
 ## Citation
 
 If you use PERISCAN in your research, please cite:
 
-> Xu Z-H, Wang L-Z, He S, et al. Peripheral immune dynamics at single-cell resolution enable blood-based detection and classification of cancer. 2026.
 
 ---
 
